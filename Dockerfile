@@ -1,8 +1,13 @@
+# Use Python 3
 FROM scrapinghub/scrapinghub-stack-scrapy:1.3-py3
 ENV TERM xterm
-ENV SCRAPY_SETTINGS_MODULE chipotle.settings
+
+# Your scrapy settings
+ENV SCRAPY_SETTINGS_MODULE XXX.settings
 RUN mkdir -p /app
 WORKDIR /app
+
+# Your requirements file
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
